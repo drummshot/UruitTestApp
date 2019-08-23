@@ -1,23 +1,10 @@
 package com.uruit.testapp.core.data.dao
 
-interface BaseDao {
+import com.uruit.testapp.core.data.realm.RealmLiveData
+import io.realm.RealmModel
+import io.realm.RealmResults
 
+abstract class BaseDao {
 
-
-
-    /*fun query(Specification<T> specification)
-
-    Completable deleteAll();
-
-    Single<PK> save(T entity);
-
-    Completable saveAll(List<T> entities);
-
-    interface Specification<T> {
-        boolean specified(T entity);
-    }
-
-    Single<T> findById(PK id);*/
-
-
+    fun <T: RealmModel> RealmResults<T>.asLiveData() = RealmLiveData<T>(this)
 }

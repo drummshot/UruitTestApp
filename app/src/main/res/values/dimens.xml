@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="box_width">100dp</dimen>
+
+    <dimen name="padding_1">10dp</dimen>
+    <dimen name="padding_2">20dp</dimen>
+
+    <dimen name="margin_1">2dp</dimen>
+    <dimen name="margin_2">4dp</dimen>
+    <dimen name="margin_3">50dp</dimen>
+
+    <dimen name="card_elevation_1">4dp</dimen>
+    <dimen name="radius_1">4dp</dimen>
+
+    <dimen name="text_size_1">20dp</dimen>
+    <dimen name="text_size_2">20dp</dimen>
+
+
+
+</resources>

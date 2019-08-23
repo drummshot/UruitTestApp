@@ -1,7 +1,5 @@
 package com.uruit.testapp.di.module
 
-import android.content.Context
-import com.uruit.testapp.application.TestApp
 import dagger.Module
 import dagger.Provides
 import io.realm.Realm
@@ -11,16 +9,9 @@ import javax.inject.Singleton
 @Module
 class SysModule {
 
-
     @Provides
     @Singleton
-    fun provideApplication(app: TestApp): Context = app
-
-
-    @Provides
-    @Singleton
-    internal fun provideRealm(ctx: Context): Realm {
-        Realm.init(ctx)
+    internal fun provideRealm(): Realm {
 
         Realm.setDefaultConfiguration(
             RealmConfiguration.Builder()
