@@ -17,6 +17,7 @@ const val PEOPLE_KEY : String = "PEOPLE"
 const val OFFICE_KEY : String ="OFFICE"
 
 const val MAX_NUMBER_OF_OFFICES: Int = 100
+const val MILLISECONDS_WAIT:Long = 5000
 
 class OfficeUseCase(val officeDao: OfficeDao) : UseCase {
 
@@ -27,7 +28,7 @@ class OfficeUseCase(val officeDao: OfficeDao) : UseCase {
 
         override fun run() {
             updateNumberOfPersons()
-            updateHandler.postDelayed(this, 5000)
+            updateHandler.postDelayed(this, MILLISECONDS_WAIT)
         }
     }
 
@@ -37,7 +38,7 @@ class OfficeUseCase(val officeDao: OfficeDao) : UseCase {
     }
 
     fun getOffices(lessThan: Boolean): LiveData<RealmResults<Office>> {
-        return officeDao.query(if(lessThan) 0 else 50, if(lessThan) 50 else 100)
+        return officeDao.query(if(lessThan) 0 else DEFAULT_NUMBER_OF_PERSONS, if(lessThan) DEFAULT_NUMBER_OF_PERSONS else MAX_NUMBER_OF_PERSONS)
     }
 
 
